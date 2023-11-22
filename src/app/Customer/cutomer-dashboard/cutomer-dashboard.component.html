@@ -1,0 +1,341 @@
+<nav 
+       id="sidebarMenu" 
+       class="collapse d-lg-block sidebar collapse bg-white" 
+       > 
+   
+    <div class="position-sticky"> 
+      <div class="list-group list-group-flush mx-3 mt-4"> 
+        <button routerLink="/customer" class="list-group-item list-group-item-action py-2 ripple" aria-current="true"> 
+          <div  align="center">Home</div> 
+        </button> <br> 
+        <button  class="list-group-item list-group-item-action py-2 ripple mt-lg-2" 
+          (click)="showAccountCreateFun()"> 
+         <div align="center">Register</div> 
+        </button><br> 
+        <button class="list-group-item list-group-item-action py-2 ripple mt-lg-2" 
+          (click)="showAccountRequestFun()"> 
+          <div align="center">Account</div> 
+        </button><br> 
+        <button class="list-group-item list-group-item-action py-2 ripple mt-lg-2" 
+        (click)="queyFunShow()"> 
+          <div align="center">Chat</div> 
+        </button><br> 
+        <button class="list-group-item list-group-item-action py-2 ripple mt-lg-2" 
+          (click)="showDocumentFun()"> 
+          <div align="center">Documents</div> 
+        </button><br> 
+        <button  (click)="showTransactionFun()" class="list-group-item list-group-item-action py-2 ripple mt-lg-2"> 
+          <div align="center">Transaction</div> 
+        </button><br> 
+        <button  class="list-group-item list-group-item-action py-2 ripple mt-lg-2" (click)="logout()"> 
+          <div align="center">Logout</div> 
+        </button> <br> 
+         
+      </div> 
+    </div> 
+  </nav>
+
+
+
+
+<!-- <header>
+  
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-dark">
+      <div class="position-sticky">
+        <div class="list-group list-group-flush mx-3 mt-4">
+          <button routerLink="/customer" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+            <span>Customer dashboard</span>
+          </button>
+          <button  class="list-group-item list-group-item-action py-2 ripple mt-lg-2"
+            (click)="showAccountCreateFun()">
+            <i class="fas fa-lock fa-fw me-3"></i><span>Register Customer</span>
+          </button>
+          <button class="list-group-item list-group-item-action py-2 ripple mt-lg-2"
+            (click)="showAccountRequestFun()">
+            <i class="fas fa-lock fa-fw me-3"></i><span>Request Account</span>
+          </button>
+          <button class="list-group-item list-group-item-action py-2 ripple mt-lg-2"
+            (click)="showTransactionFun()">
+            <i class="fas fa-lock fa-fw me-3"></i><span>Transaction</span>
+          </button>
+          <button class="list-group-item list-group-item-action py-2 ripple mt-lg-2"
+            (click)="showDocumentFun()">
+            <i class="fas fa-chart-line fa-fw me-3"></i><span>Upload Documents</span>
+          </button>
+          <button  (click)="queyFunShow()" class="list-group-item list-group-item-action py-2 ripple mt-lg-2">
+            <span>View All Query Asked</span>
+          </button>
+          <button  class="list-group-item list-group-item-action py-2 ripple mt-lg-2" (click)="logout()">
+            <i class="fas fa-chart-bar fa-fw me-3"></i><span>LogOut Customer</span>
+          </button>
+        </div>
+      </div>
+    </nav> -->
+    
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-primary-subtle fixed-top">
+
+      <div class="container-fluid">
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#sidebarMenu"
+          aria-controls="sidebarMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <a class="navbar-brand" href="/customer">
+          <img
+          src="../../../assets/logo.png"
+            height="50"
+            width="80"
+            alt="MDB Logo"
+            loading="lazy"
+          />
+        </a>
+        <ul class="navbar-nav ms-auto d-flex flex-row">
+         <li><h1 *ngIf="needRegistartion">Create customer </h1></li>
+          <li><h1>Welcome {{userName}}  </h1></li>
+
+          <li class="nav-item dropdown g-1">
+           
+              <img
+                src="../../../assets/avtar.png"
+                class="rounded-circle"
+                height="50"
+                alt="Avatar"
+                loading="lazy"
+              />
+       
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+
+  <!-- </header> -->
+  <nav 
+  id="main-navbar" 
+  class="navbar navbar-expand-lg navbar-light bg-white fixed-top" 
+  > 
+
+<div class="container-fluid"> 
+
+ <ul class="navbar-nav ms-auto d-flex flex-row"> 
+   <ul class="nav justify-content-center"> 
+     <li class="nav-item"> 
+       <a class="nav-link active" aria-current="page" (click)="viewPassbook()">Passbook</a> 
+     </li> 
+     <li class="nav-item"> 
+       <a class="nav-link active" aria-current="page"(click)="viewAccountStatement()">Statement</a> 
+     </li> 
+     <li class="nav-item"> 
+       <a class="nav-link active" aria-current="page" (click)="viewQueryForm()">Chat</a> 
+     </li> 
+
+   </ul> 
+
+   <li class="nav-item dropdown"> 
+     <a 
+        class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" 
+        id="navbarDropdownMenuLink" 
+        role="button" 
+        data-mdb-toggle="dropdown" 
+        aria-expanded="false" 
+        > 
+       <!-- <img (click)="showProfile()" 
+            src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" 
+            class="rounded-circle" 
+            height="22" 
+            alt="" 
+            loading="lazy"/>  -->
+     </a> 
+      
+
+   </li> 
+ </ul> 
+</div> 
+
+</nav>
+
+
+  <!-- <main style="margin-top: 58px;">
+  
+   
+    <div class="row row-cols-1 row-cols-md-4 g-4 mt-2">
+      <div class="col" (click)="viewPassbook()">
+        <div class="card h-40">
+          <img src="../../../assets/passbook.jpg" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+          <div class="card-body">
+            <h5 class="card-title">Passbook </h5>
+           
+          </div>
+        </div>
+      </div>
+      <div class="col" (click)="viewAccountStatement()">
+        <div class="card h-40">
+          <img src="../../../assets/statment.jpg" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+          <div class="card-body">
+            <h5 class="card-title">Account Statement</h5>
+           
+          </div>
+        </div>
+      </div>
+      <div class="col" (click)="viewQueryForm()">
+        <div class="card h-40">
+          <img src="../../../assets/query.jpg" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+          <div class="card-body">
+            <h5 class="card-title">Ask Query</h5>
+           
+          </div>
+        </div>
+      </div>
+      <div class="col" (click)="fdcalculator()">
+        <div class="card h-40">
+          <img src="../../../assets/calculator.jpg" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+          <div class="card-body">
+            <h5 class="card-title">Interest Calculator</h5>
+           
+          </div>
+        </div>
+      </div>
+
+    </div> -->
+
+
+    <main style="margin-top: 58px"> 
+      <div class="container pt-4"> 
+     
+         
+        <section class="mb-4"> 
+          <div class="card"> 
+            <div class="card-header text-center py-3"> 
+              <h5 class="mb-0 text-center"> 
+     
+     
+              </h5> 
+            </div> 
+            <button (click)="viewPassbook()" style="left: auto;">Welcome {{userName}}</button> 
+            <div class="card-body"> 
+              <div align="center" class="table-responsive"> 
+     
+            </div> 
+            <div align="center"> 
+            
+              <div class="card-body"> 
+     
+                 
+              <h4>  </h4> 
+           <div> 
+            <div *ngIf="showPassbook"> 
+              <app-customer-passbook></app-customer-passbook> 
+              </div> 
+              
+               
+              <div *ngIf="showAccountForm"> 
+                <app-request-account ></app-request-account> 
+              </div> 
+           
+              <div *ngIf="showAccountStatment"> 
+                <app-account-statement></app-account-statement> 
+              </div> 
+              
+           
+              <div *ngIf="showDocument"> 
+                <app-customer-document></app-customer-document> 
+              </div> 
+               
+              <div *ngIf="showAccountCreate"> 
+                <app-customer-register ></app-customer-register> 
+              </div> 
+           
+              <div  *ngIf="showQuery"> 
+                <app-customer-query></app-customer-query> 
+              </div> 
+               
+           
+              <div *ngIf="showTransaction"> 
+                <app-customert-transaction ></app-customert-transaction> 
+              </div> 
+               
+              <h4 *ngIf="showWarrning"> </h4> 
+           
+              <div *ngIf="showQueryTab"> 
+               <app-view-query></app-view-query> 
+              </div> 
+           
+           </div> 
+     
+              </div> 
+     
+            </div> 
+          </div> 
+     
+      </div> 
+     
+       
+     
+        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-primary-subtle fixed-top"> 
+     
+          <div class="container-fluid"> 
+           
+          </div> 
+        </nav> 
+      <main> 
+          <div class="position-absolute bottom-0 end-0"><h1></h1></div> 
+      </main>
+
+
+
+
+
+
+
+<!-- 
+    <div *ngIf="showPassbook">
+    <app-customer-passbook></app-customer-passbook>
+    </div>
+   
+    
+    <div *ngIf="showAccountForm">
+      <app-request-account ></app-request-account>
+    </div>
+
+    <div *ngIf="showAccountStatment">
+      <app-account-statement></app-account-statement>
+    </div>
+   
+
+    <div *ngIf="showDocument">
+      <app-customer-document></app-customer-document>
+    </div>
+    
+    <div *ngIf="showAccountCreate">
+      <app-customer-register ></app-customer-register>
+    </div>
+
+    <div  *ngIf="showQuery">
+      <app-customer-query></app-customer-query>
+    </div>
+    
+
+    <div *ngIf="showTransaction">
+      <app-customert-transaction ></app-customert-transaction>
+    </div>
+    
+    <h4 *ngIf="showWarrning"> Create Customer Details to Request Account</h4>
+
+    <div *ngIf="showQueryTab">
+     <app-view-query></app-view-query>
+    </div>
+
+    <div *ngIf="showCalculator">
+      <app-fd-calculator></app-fd-calculator>
+    </div> -->
+
+  
+
+
