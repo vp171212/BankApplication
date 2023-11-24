@@ -30,7 +30,7 @@
                                     <label class="form-label" for="form3Example97">First Name</label> 
                                     <span *ngIf="firstNameValidator && firstNameValidator.invalid && firstNameValidator.touched" 
                                     style="color: red;" 
-                                    >required FirstName</span> 
+                                    ><br>required FirstName</span> 
                                     <input type="text" id="form3Example97" class="form-control form-control-lg" 
                                     formControlName="firstName" /> 
                                      
@@ -43,7 +43,7 @@
                                     <label class="form-label" for="form3Example97">Last Name</label> 
                                     <span *ngIf="lastNameValidator && lastNameValidator.invalid && lastNameValidator.touched" 
                                     style="color: red;" 
-                                    >required LastName</span> 
+                                    ><br>required LastName</span> 
                                     <input type="text" id="form3Example97" class="form-control form-control-lg"  
                                     formControlName="lastName"/> 
                                      
@@ -68,7 +68,7 @@
                               <label class="form-label" for="form3Example97">Email ID</label> 
                               <span *ngIf="emailValidator && emailValidator.invalid && emailValidator.touched" 
                               style="color: red;" 
-                              >required Email</span> 
+                              ><br>required Email</span> 
                               <input type="email" class="form-control form-control-lg"  
                               formControlName="email"/> 
                                
@@ -78,7 +78,8 @@
                               <label class="form-label" for="form3Example9">Date Of Birth</label> 
                               <span *ngIf="dobValidator && dobValidator.invalid && dobValidator.touched" 
                               style="color: red;" 
-                              >required Date-of-Birth</span> 
+                              >
+                              <br>required Date-of-Birth</span> 
                               <input type="date" class="form-control form-control-lg"  
                               formControlName="DOB"/> 
                               
@@ -89,7 +90,7 @@
                               <input type="number" class="form-control form-control-lg" placeholder="{{userId}}" 
                               formControlName="userId" [(ngModel)]="userId" readonly/> 
                             </div>  
-                            <button type="submit" class="btn btn-primary btn-block mb-4"> 
+                            <button type="submit" class="btn btn-outline-success btn-block mb-4"> 
                               Register 
                             </button> 
                             <div *ngIf="responceRegisteration" class="alert alert-primary d-flex align-items-center" role="alert"> 

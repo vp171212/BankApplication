@@ -352,8 +352,9 @@ this.userName=datas.userName
           this.showTransactionState = false
           this.showCardsState = false;
           this.showCustomerAll=false;
+          this.adminRegister=false;
           console.log(err);
-          console.log("error worked");
+          console.log("No Query Found");
 
         }
       }
@@ -393,7 +394,7 @@ this.userName=datas.userName
         },
         error: (error: HttpErrorResponse) => {
           console.log(error);
-          console.log("error here");
+          console.log("");
           this.eroorQuerySubmit = true
 
 
@@ -415,7 +416,7 @@ this.userName=datas.userName
     this.showTransactionState = false
     this.showCardsState = false;
     this.noQueryAdded=false;
-
+    this.adminRegister=false;
   }
 
   //accounrequest
@@ -546,7 +547,7 @@ this.showCrudeState=true
   {
     this.adminRegister=true
 
-
+    this.noQueryAdded = false;
 
     this.showCrudeState=false
     this.showTransactionState=false

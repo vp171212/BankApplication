@@ -1,47 +1,67 @@
-<nav 
-       id="sidebarMenu" 
-       class="collapse d-lg-block sidebar collapse bg-white"> 
-   
-    <div class="position-sticky"> 
-      <div class="list-group list-group-flush mx-3 mt-4"> 
-        
-            <button  class="list-group-item list-group-item-action py-2 ripple" aria-current="true"> 
-              <div  align="center"><h1> {{userName}}</h1></div> 
-            </button> <br> 
-          
-        <button  class="list-group-item list-group-item-action py-2 ripple" aria-current="true"> 
-          <div  align="center">Home</div> 
-        </button> <br> 
-        <button  class="list-group-item list-group-item-action py-2 ripple mt-lg-2" 
-        (click)="showCustomerFun()"> 
-         <div align="center">Customer</div> 
-        </button><br> 
-        <button  class="list-group-item list-group-item-action py-2 ripple mt-lg-2" 
-        (click)="registerNewAdmin()"> 
-         <div align="center">Register Admin</div> 
-        </button><br> 
-        <button class="list-group-item list-group-item-action py-2 ripple mt-lg-2" 
-        (click)="showTransaction()"> 
-          <div align="center">Transaction</div> 
-        </button><br> 
-        <button class="list-group-item list-group-item-action py-2 ripple mt-lg-2" 
-        (click)="handleCardClick()"> 
-          <div align="center">Chat Request</div> 
-        </button><br> 
-        <button class="list-group-item list-group-item-action py-2 ripple mt-lg-2" 
-        (click)="handleAccountRequest()"> 
-          <div align="center">Account Request</div> 
-        </button><br> 
-        <!-- <button  (click)="showTransactionFun()" class="list-group-item list-group-item-action py-2 ripple mt-lg-2"> 
-          <div align="center">Transaction</div> 
-        </button><br> --> 
-        <button  class="list-group-item list-group-item-action py-2 ripple mt-lg-2" (click)="logout()"> 
-          <div align="center">Logout</div> 
-        </button> <br>
-         
-      </div> 
-    </div> 
-  </nav> 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Add your head content here -->
+  <style>
+    /* Add any additional styles here */
+    #sidebarMenu {
+      /* Add any specific styles for the sidebarMenu */
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+
+    .list-group-item {
+      /* Add any specific styles for the list items */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Add your body content here -->
+
+  <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+    <div class="position-sticky">
+      <div class="list-group list-group-flush mx-3 mt-4">
+        <button class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+          <div align="center"><h1>{{userName}}</h1></div>
+        </button>
+        <button class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+          <div align="center">Home</div>
+        </button>
+        <button class="list-group-item list-group-item-action py-2 ripple mt-lg-2" (click)="showCustomerFun()">
+          <div align="center">Customer</div>
+        </button>
+        <button class="list-group-item list-group-item-action py-2 ripple mt-lg-2" (click)="registerNewAdmin()">
+          <div align="center">Register Admin</div>
+        </button>
+        <button class="list-group-item list-group-item-action py-2 ripple mt-lg-2" (click)="showTransaction()">
+          <div align="center">Transactions</div>
+        </button>
+        <button class="list-group-item list-group-item-action py-2 ripple mt-lg-2" (click)="handleCardClick()">
+          <div align="center">Chat Request</div>
+        </button>
+        <button class="list-group-item list-group-item-action py-2 ripple mt-lg-2" (click)="handleAccountRequest()">
+          <div align="center">Account Request</div>
+        </button>
+        <button class="list-group-item list-group-item-action py-2 ripple mt-lg-2" (click)="UpdateInterest()">
+          <div align="center">Add Interest Rate</div>
+        </button>
+        <button class="list-group-item list-group-item-action py-2 ripple mt-lg-2" (click)="logout()">
+          <div align="center">Logout</div>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Add your other HTML content and scripts here -->
+</body>
+
+</html>
+
+
+
+
  
 <div class="row align-items-center"> 
       <div class="col-md-1"></div> 
@@ -81,21 +101,36 @@
       
   </div> 
  
-  <div *ngIf="eroorQuerySubmit" class="mt-3">  
-    <ngb-alert [type]="'danger'"> 
-      <h4 class="alert-heading">Check you have Entered correct CustomerId</h4> 
-      <p class="mb-0">Please verify the information and try again.</p> 
-      <button class="btn btn-danger" (click)="reset()">Try Again</button> 
-    </ngb-alert> 
-  </div> 
-  <ngb-alert *ngIf="noQueryAdded" > 
-    Sorry No Query Request Added <button type="button" class="btn btn-success" (click)="reset()">Clear</button>  
-  </ngb-alert> 
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"> 
+    <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16"> 
+      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/> 
+    </symbol> 
+    <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16"> 
+      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/> 
+    </symbol> 
+    <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16"> 
+      <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/> 
+    </symbol> 
+  </svg>
+  <div class="alert alert-warning d-flex align-items-center" *ngIf="eroorQuerySubmit" role="alert"> 
+    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg> 
+    <div> 
+      Invalid Id 
+    </div> 
+  </div>
+
  
+  <div class="alert alert-primary d-flex align-items-center"  *ngIf="noQueryAdded" role="alert"> 
+<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg> 
+<div> 
+No Query Found!
+</div> 
+</div>
+
  
-  <div class="container mt-4" *ngIf="showQueryResult"> 
-    <div class="row"> 
- 
+<div class="card w-75" *ngIf="showQueryResult"> 
+  <div class="card-body">
+
       <div class="col-md-6"> 
         <h2>Customer Queries</h2> 
         <table class="table table-striped"> 
@@ -117,7 +152,9 @@
           </tbody> 
         </table> 
       </div> 
-      <div class="col-md-6" *ngIf="formShow"> 
+      <div class="card text-center" style="width: 18rem;" *ngIf="formShow"> 
+        <div class="card-body"> 
+     
         <h2>Reply to Query</h2> 
         <form [formGroup]="replyForm" (ngSubmit)="onSubmit(replyForm.value)"> 
           <div class="mb-3"> 
@@ -140,7 +177,9 @@
     </div> 
   </div> 
  
-   
+  </div>
+
+
 
        
       <div *ngIf="showUpdateInterest"> 
@@ -454,69 +493,5 @@
           </table>
         </div>
 
-        <div *ngIf="eroorQuerySubmit" class="mt-3"> 
-          <ngb-alert [type]="'danger'"> 
-            <h4 class="alert-heading">Check you have Entered correct CustomerId</h4>
-            <p class="mb-0">Please verify the information and try again.</p>
-            <button class="btn btn-danger" (click)="reset()">Try Again</button>
-          </ngb-alert>
-        </div>
-        <ngb-alert *ngIf="noQueryAdded">
-          Sorry No Query Request Added <button type="button" class="btn btn-success" (click)="reset()">Clear</button>
-        </ngb-alert>
-
-
-        <!-- <div class="container mt-4" *ngIf="showQueryResult">
-          <div class="row">
-          
-            <div class="col-md-6">
-              <h2>Customer Queries</h2>
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th>Query Message</th>
-                    <th>Customer ID</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let query of customerQueries">
-                    <td>{{ query.queryText }}</td>
-                    <td>{{ query.customerId }}</td>
-                    <td>
-                      <button class="btn btn-primary" (click)="generateReplyForm()">Reply</button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div> -->
-
-           
-            <div class="col-md-6" *ngIf="formShow">
-              <h2>Reply to Query</h2>
-              <form [formGroup]="replyForm" (ngSubmit)="onSubmit(replyForm.value)">
-                <div class="mb-3">
-                  <label for="replyMessage" class="form-label">Reply Message:</label>
-                  <textarea class="form-control" formControlName="replyQuery"></textarea>
-                  <span class="error-message"
-                    *ngIf="replyValidator && replyValidator.invalid && replyValidator.touched">
-                    Required Reply Text
-                  </span>
-                </div>
-                <div class="mb-3">
-                  <label for="customerId" class="form-label">Customer ID:</label>
-                  <input type="number" class="form-control" formControlName="customerId">
-                  <span class="error-message"
-                    *ngIf="cutomerIdValidator && cutomerIdValidator.invalid && cutomerIdValidator.touched">
-                    Required Customer ID
-                  </span>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-            </div>
-          </div>
-        
-
-
-
-      
+       
+       

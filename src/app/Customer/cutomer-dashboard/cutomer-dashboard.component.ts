@@ -72,7 +72,7 @@ viewPassbook()
 {
   
     this.showPassbook=true;
-
+    this.showFd=false;
     this.showQuery=false
     this.showDocument = false;
     this.showAccountCreate=false;
@@ -88,7 +88,7 @@ showAccountStatment=false
 viewAccountStatement()
 {
  this.showAccountStatment=true
-
+ this.showFd=false;
  this.showQuery=false
 this.showDocument = false;
 this.showAccountCreate=false;
@@ -106,7 +106,7 @@ showQuery=false;
 viewQueryForm()
 {
 this.showQuery=true
-
+this.showFd=false;
 this.showAccountStatment=false;
 this.showDocument = false;
 this.showAccountCreate=false;
@@ -123,7 +123,7 @@ showDocument: boolean = false;
 
 showDocumentFun() {
   this.showDocument = true;
-
+  this.showFd=false;
   this.showAccountStatment=false
   this.showQuery=false
  this.showAccountCreate=false;
@@ -140,7 +140,7 @@ showAccountCreateFun()
 {
 
 this.showAccountCreate=true;
-
+this.showFd=false;
   this.showDocument = false;
   this.showQuery=false
   this.showTransaction=false;
@@ -161,7 +161,7 @@ showTransactionFun()
 this.showTransaction=true
   
   
-
+this.showFd=false;
   this.showDocument = false;
   this.showQuery=false
   this.showAccountCreate=false;
@@ -181,7 +181,7 @@ showAccountRequestFun()
  
 this.showAccountForm=true;
 
-  
+this.showFd=false;
   this.showTransaction=false
   this.showDocument = false;
   this.showQuery=false
@@ -191,15 +191,27 @@ this.showAccountForm=true;
   this.showAccountStatment=false
   this.showQueryTab=false
 }
-
-
+showFd=false;
+showAccountFd()
+{
+  this.showFd=true;
+  this.showAccountForm=false;
+  this.showTransaction=false
+  this.showDocument = false;
+  this.showQuery=false
+  this.showAccountCreate=false;
+  this.showPassbook=false;
+  this.showWarrning=true
+  this.showAccountStatment=false
+  this.showQueryTab=false
+}
 //logout
 
 showQueryTab=false
 queyFunShow()
 {
  this.showQueryTab=true
- 
+ this.showFd=false;
  this.showTransaction=false
  this.showDocument = false;
  this.showQuery=false
@@ -216,6 +228,7 @@ logout() {
 }
 showCardsState = true;
 showCards() {
+  this.showFd=false;
   this.showQueryTab = false
   this.showTransaction = false
   this.showAccountCreate = false;

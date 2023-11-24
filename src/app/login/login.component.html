@@ -1,5 +1,56 @@
+<!-- <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'> 
+ 
+<div class="login"> 
+  <h2 class="active" routerLink=""> sign in </h2> 
+ 
+  <h2 class="nonactive" routerLink="/registerForm"> sign up </h2> 
+
+  <form [formGroup]="loginUserForm"  (ngSubmit)="submitData(loginUserForm.value)"> 
+    
+     
+ 
+    <label class="form-label" for="form3Example3">Username </label> 
+    <span *ngIf="userValidator && userValidator.invalid && userValidator.touched" 
+    style="color: red;" 
+    > Required Username</span> 
+    <input type="text" class="form-control form-control-lg" 
+      placeholder="Enter Your User Name"  
+      formControlName="UserName"/> 
+ 
+    <br> 
+     
+    <br> 
+ 
+    <label class="form-label" for="form3Example4">Password</label> 
+    <span *ngIf="passwordValidator && passwordValidator.invalid && passwordValidator.touched" 
+    style="color: red;" 
+    >required Password 
+  </span> 
+    <input type="password"  class="form-control form-control-lg" 
+      placeholder="Enter password" 
+      formControlName="Password" /> 
+    <br> 
+ 
+    <input type="checkbox" id="checkbox-1-1" class="custom-checkbox" /> 
+    <label for="checkbox-1-1">Keep me Signed in</label> 
+     
+    <button class="signin"> 
+      Sign In 
+    </button> 
+ 
+ 
+    <hr> 
+ 
+    <a href="#">Forgot Password?</a> 
+  </form> 
+ 
+</div> -->
+
+
+
+
 <section class="background-radial-gradient overflow-hidden"> 
-  <style> 
+  <!-- <style> 
     .background-radial-gradient { 
       
       background-image: radial-gradient(657px circle at 0% 0%, 
@@ -39,14 +90,14 @@
       background-color: hsla(0, 0%, 100%, 0.9) !important; 
       backdrop-filter: saturate(200%) blur(25px); 
     } 
-  </style> 
+  </style>  -->
  
   <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5"> 
     <div class="row gx-lg-5 align-items-center mb-5"> 
       <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10"> 
         <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(177, 53%, 40%)"> 
           A V Bank <br /> 
-          <span style="color: hsl(218, 81%, 75%)">Welcome</span> 
+          <span style="color:  hsl(177, 53%, 40%)">Welcome</span> 
         </h1> 
         <p class="mb-4 opacity-70" style="color: hsl(219, 42%, 37%)"> 
  
@@ -96,7 +147,7 @@
                  
               </div> 
  
-              <button type="submit" class="btn btn-primary btn-block mb-4"> 
+              <button type="submit" class="btn btn-success btn-block mb-4"> 
                 Sign up 
               </button> 
               <p class="mb-5 pb-lg-2" style="color: #404ab8;">Don't have an account? <a routerLink="/registerForm"  

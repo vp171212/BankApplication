@@ -53,6 +53,7 @@ export class CustomerDocumentComponent {
     this.auth.uploadDocument(formData).subscribe({
       next: (res) => {
         console.log(res);
+        alert("Upload done successfully")
       },
       error: (err: HttpErrorResponse) => {
         console.error(err);
